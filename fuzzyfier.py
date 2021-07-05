@@ -21,13 +21,13 @@ class FuzzyPy():
         return y
 
     def gaussmf(self, x, c, v):
-        """Compute Gaussian Membership function. """
-        y = [np.exp(-np.power((i - c), 2) / (2 * v ** 2.0)) for i in x]
+        
+        y = [np.exp(-np.power((i - c), 2) / (2 * v ** 2.0)) for i in x]""" Gaussian Membership function. """
         return y
 
     def softmax(x):
-       """Compute softmax values for each sets of scores in x."""
-       return np.exp(x)/np.sum(np.exp(x), axis=0)
+      
+       return np.exp(x)/np.sum(np.exp(x), axis=0) """ of scores in x."""
 
 
 class Triangle(FuzzyPy):
@@ -93,12 +93,6 @@ def complement(A):
     """complement of membership"""
     return 1-A
 
-def alphaCut(A,a):
-    """Alpha cut on membership function"""
-    from copy import deepcopy
-    B = deepcopy(A)
-    B[(B < a)]= 0
-    return B
 
 def add(A,B):
     """Adds two fuzzy membership functions/sets"""
