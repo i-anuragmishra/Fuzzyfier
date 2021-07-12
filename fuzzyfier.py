@@ -21,13 +21,13 @@ class FuzzyPy():
         return y
 
     def gaussmf(self, x, c, v):
-        
-        y = [np.exp(-np.power((i - c), 2) / (2 * v ** 2.0)) for i in x]""" Gaussian Membership function. """
+
+        y = [np.exp(-np.power((i - c), 2) / (2 * v ** 2.0)) for i in x]
         return y
 
     def softmax(x):
-      
-       return np.exp(x)/np.sum(np.exp(x), axis=0) """ of scores in x."""
+
+        return np.exp(x)/np.sum(np.exp(x), axis=0)
 
 
 class Triangle(FuzzyPy):
@@ -81,24 +81,25 @@ class Gauss5(FuzzyPy):
 
 
 def intersect(A, B):
-     """Intersect two membership functions"""
-    return np.minimum(A,B)
+    """Intersect two membership functions"""
+    return np.minimum(A, B)
 
 
 def union(A, B):
     """Union of two membership functions"""
     return np.maximum(A, B)
 
+
 def complement(A):
     """complement of membership"""
     return 1-A
 
 
-def add(A,B):
+def add(A, B):
     """Adds two fuzzy membership functions/sets"""
-    return np.minimum(A+B,1)
+    return np.minimum(A+B, 1)
 
 
-def sub(A,B):
+def sub(A, B):
     """Subtracts two fuzzy membership functions/sets"""
-    return np.maximum(A-B,0)
+    return np.maximum(A-B, 0)
